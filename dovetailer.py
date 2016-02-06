@@ -5,6 +5,7 @@ import os
 import os.path
 import time
 
+
 # reader thread subclasses threading.Thread
 class ShuttleLog(threading.Thread):
 
@@ -15,8 +16,7 @@ class ShuttleLog(threading.Thread):
         self.lock = lock
 
     def run(self):
-        with open(self.logfile, 'r') as input_file:  
-
+        with open(self.logfile, 'r') as input_file:
             while True:
                 line = input_file.readline()
                 while line:
